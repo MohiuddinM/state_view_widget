@@ -1,0 +1,23 @@
+name: state_view_widget_example
+description: "A new Flutter project."
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.0-334.2.beta
+
+dependencies:
+  flutter:
+    sdk: flutter
+  state_view_widget:
+    path: ../
+  json:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true

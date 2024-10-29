@@ -142,7 +142,7 @@ abstract class ViewOf<S extends StateViewWidget<S>, T extends StateOf<S>>
   const ViewOf({super.key});
 
   T _valueOf(BuildContext context) {
-    return Resolver.resolve<StateOf<S>>(context)! as T;
+    return context.resolve<StateOf<S>>()! as T;
   }
 
   Widget buildView(BuildContext context, T state);
@@ -157,4 +157,8 @@ abstract class ViewOf<S extends StateViewWidget<S>, T extends StateOf<S>>
       },
     );
   }
+}
+
+extension BuildContextResolver on BuildContext {
+  T? resolve<T>() => Resolver.resolve<T>(this);
 }
